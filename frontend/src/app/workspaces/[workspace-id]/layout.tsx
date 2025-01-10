@@ -15,7 +15,9 @@ export default function WorkspacesLayout({
       <aside className="w-60 bg-gray-100 border-r border-gray-300 flex flex-col">
         {/* Sidebar Header */}
         <div className="py-4 px-6 text-lg font-semibold text-gray-800 border-b border-gray-300">
-          syncd
+          <Link href="/" className="hover:underline">
+            syncd
+          </Link>
         </div>
 
         {/* Sidebar Links */}
