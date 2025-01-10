@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Next.js App Container
+  app:
+    build:
+      context: ./frontend
+    container_name: syncd-frontend
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/syncd_db
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    command: npm run dev
+
+  # PostgreSQL Container
+  db:
+    image: postgres:15
+    container_name: syncd-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: syncd_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+
