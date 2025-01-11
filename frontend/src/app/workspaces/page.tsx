@@ -21,13 +21,13 @@ export default function WorkspacesPage() {
       </div>
 
       {/* Workspaces List */}
-      <ul className="mt-4 space-y-4">
+      <ul className="space-y-4">
         {workspaces.map((workspace) => (
           <li
             key={workspace.id}
             className="p-4 bg-gray-100 border border-gray-300 rounded-md flex justify-between items-center"
           >
-            <span className="text-lg font-medium">{workspace.name}</span>
+            <span>{workspace.name}</span>
             <Link
               href={`/workspaces/${workspace.id}/connections`}
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
