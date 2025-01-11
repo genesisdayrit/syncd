@@ -1,5 +1,9 @@
-export default function DestinationsPage({ params }: { params: { "workspace-id": string } }) {
-  const workspaceId = params["workspace-id"]; // Extract the workspace ID from params
+"use client";
+import { useParams } from "next/navigation";
+
+export default function DestinationsPage() {
+  const params = useParams();
+  const workspaceId = params["workspace-id"]; // Extract workspace ID using useParams
 
   return (
     <div className="p-6">

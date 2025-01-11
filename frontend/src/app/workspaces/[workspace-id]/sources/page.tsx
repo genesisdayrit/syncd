@@ -1,4 +1,8 @@
-export default function SourcesPage({ params }: { params: { "workspace-id": string } }) {
+"use client";
+import { useParams } from "next/navigation";
+
+export default function SourcesPage() {
+  const params = useParams();
   const workspaceId = params["workspace-id"];
 
   return (
